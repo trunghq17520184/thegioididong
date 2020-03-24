@@ -1,0 +1,7 @@
+{
+    "Admin": true,
+    "Amin": true,
+    "Controller": true,
+    "AdminCategoryController": true,
+    "AdminPostController": true
+}
