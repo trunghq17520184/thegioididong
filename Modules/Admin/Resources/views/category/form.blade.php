@@ -41,6 +41,10 @@
                         <label>Mô tả </label>
                             <textarea class="form-control" name="pro-meta-content" placeholder="Mô tả"></textarea>
                         </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="c_home">
+                            <label class="form-check-label" for="c_home" {{isset($category)&&($category->c_home == 1) ?"checked" :''}}>Hiển thị trang chủ</label>
+                        </div>
                         <div class="form-group">
                             @if (isset($category))
                             <button type="submit" class="btn btn-success">Lưu</button>

@@ -8,18 +8,18 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{asset('adminAsset')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('assets')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('adminAsset')}}/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{asset('assets')}}/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset('adminAsset')}}/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{asset('assets')}}/bower_components/Ionicons/css/ionicons.min.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="{{asset('adminAsset')}}/bower_components/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="{{asset('assets')}}/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('adminAsset')}}/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="{{asset('assets')}}/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="{{asset('adminAsset')}}/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="{{asset('assets')}}/dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,7 +69,7 @@
                       <!-- start message -->
                       <a href="#">
                         <div class="pull-left">
-                          <img src="{{asset('adminAsset')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('assets')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                         </div>
                         <h4>
                           Support Team
@@ -82,7 +82,7 @@
                     <li>
                       <a href="#">
                         <div class="pull-left">
-                          <img src="{{asset('adminAsset')}}/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('assets')}}/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                         </div>
                         <h4>
                           AdminLTE Design Team
@@ -94,7 +94,7 @@
                     <li>
                       <a href="#">
                         <div class="pull-left">
-                          <img src="{{asset('adminAsset')}}/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('assets')}}/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                         </div>
                         <h4>
                           Developers
@@ -106,7 +106,7 @@
                     <li>
                       <a href="#">
                         <div class="pull-left">
-                          <img src="{{asset('adminAsset')}}/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('assets')}}/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                         </div>
                         <h4>
                           Sales Department
@@ -118,7 +118,7 @@
                     <li>
                       <a href="#">
                         <div class="pull-left">
-                          <img src="{{asset('adminAsset')}}/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('assets')}}/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                         </div>
                         <h4>
                           Reviewers
@@ -255,13 +255,13 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="{{asset('adminAsset')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                <img src="{{asset('assets')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                 <span class="hidden-xs">Alexander Pierce</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header">
-                  <img src="{{asset('adminAsset')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                  <img src="{{asset('assets')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                   <p>
                     Alexander Pierce - Web Developer
@@ -310,7 +310,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="{{asset('adminAsset')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <img src="{{asset('assets')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>Alexander Pierce</p>
@@ -332,7 +332,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
-          <li class="">
+          <li>
             <a href="{{route('admin.index')}}">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
@@ -355,20 +355,6 @@
           <li class="treeview">
             <a href="#">
               <i class="fa fa-folder"></i>
-              <span>Bài viết</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="{{route('admin.get.category')}}"><i class="fa fa-circle-o"></i> Danh mục</a></li>
-              <li><a href="{{route('admin.get.product')}}"><i class="fa fa-list"></i> Danh sách sản phẩm</a></li>
-              <li><a href="{{route('admin.get.create.product')}}"><i class="fa fa-plus-square"></i> Thêm sản phẩm</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-folder"></i>
               <span>Hình ảnh</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -379,6 +365,12 @@
               <li><a href="{{route('admin.get.product')}}"><i class="fa fa-list"></i> Danh sách sản phẩm</a></li>
               <li><a href="{{route('admin.get.create.product')}}"><i class="fa fa-plus-square"></i> Thêm sản phẩm</a></li>
             </ul>
+          </li>
+          <li>
+            <a href="{{route('admin.get.slider')}}">
+              <i class="fa fa-folder"></i>
+              <span>Slider</span>
+            </a>
           </li>
           <li class="treeview">
             <a href="#">

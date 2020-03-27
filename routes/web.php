@@ -15,7 +15,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Auth::routes();
+Route::group(['namespace'=>'Auth'],function(){
+    Route::get('register', 'RegisterController@getRegisterForm')->name('auth.get.registerform');
+
+    Route::post('register', 'RegisterController@postRegisterForm');
+    Route::get('login', 'LoginController@getLoginForm')->name('auth.get.loginform');
+    Route::post('login', 'LoginController@postLoginForm');
+    Route::get('reset', 'RegisterController@getRegisterForm')->name('password.request');
+
+
+});
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/danhmuc/{slug}-{id}', 'CategoryController@getlistProduct')->name('get.list.product');

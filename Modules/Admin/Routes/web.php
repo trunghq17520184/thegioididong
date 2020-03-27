@@ -40,7 +40,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'AdminSliderController@index')->name('admin.get.slider');
         Route::post('/', 'AdminSliderController@store');
         Route::get('/{action}/{id}', 'AdminSliderController@action')->name('admin.get.action.slider');
-    });
+        Route::post('/edit/{id}', 'AdminSliderController@update');
+
+    }); 
     Route::group(['prefix' => 'images'], function () {
         Route::get('/', 'AdminImageController@index')->name('admin.get.image');
         Route::post('/', 'AdminImageController@store');

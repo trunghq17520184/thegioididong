@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('title','CÔNG TY TNHH TM DV THIẾT BỊ ĐIỆN MẠNH TÙNG')
 @section('content')
-<div class="slider-with-banner">
-    <div class="container">
+<div class="box p-2">
+    <div class="slider-with-banner">
         <div class="row">
-            <!-- Begin Category Menu Area -->
             <div class="col-lg-3">
                 <!--Category Menu Start-->
                 <div class="category-menu">
@@ -62,32 +61,17 @@
                         </ul>
                     </div>
                 </div>
-                <!--Category Menu End-->
             </div>
-            <!-- Category Menu Area End Here -->
-            <!-- Begin Slider Area -->
             <div class="col-lg-9">
-                <div class="slider-area pt-sm-30 pt-xs-30">
+                <div class="slider-area">
                     <div class="slider-active owl-carousel">
                         @foreach($sliders as $slider)
                         @if($slider->type==(1||2))
-                        <!-- Begin Single Slide Area -->
-                        <div class="single-slide align-center-left animation-style-02 bg-4">
+                        <div class="single-slide align-center-left animation-style-02">
                             <div class="slider-progress">
                             </div>
-                            <img src="{{pare_url_file($slider->name)}}" alt="">
-                            @if($slider->description)
-                            <div class="slider-content">
-                                <div>
-                                    {!!$slider->description!!}
-                                </div>
-                                <div class="default-btn slide-btn">
-                                    <a class="links" href="{{isset($slider->url)?$slider->url:route('home')}}">Shopping Now</a>
-                                </div>
-                            </div>
-                            @endif
+                            <img src="{{pare_url_file($slider->name)}}" alt="{{$slider->description}}">
                         </div>
-                        <!-- Single Slide Area End Here -->
                         @endif
                         @endforeach
                     </div>
@@ -96,50 +80,16 @@
             <!-- Slider Area End Here -->
         </div>
     </div>
+    <!-- Slider With Category Menu Area End Here -->
 </div>
-<!-- Slider With Category Menu Area End Here -->
-<!-- Begin Li's Static Banner Area -->
-<div class="li-static-banner pt-20 pt-sm-30 pt-xs-30">
-    <div class="container">
-        <div class="row">
-            <!-- Begin Single Banner Area -->
-            <div class="col-lg-4 col-md-4">
-                <div class="single-banner pb-xs-30">
-                    <a href="#">
-                        <img src="/images/banner/1_3.jpg" alt="Li's Static Banner">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Banner Area End Here -->
-            <!-- Begin Single Banner Area -->
-            <div class="col-lg-4 col-md-4">
-                <div class="single-banner pb-xs-30">
-                    <a href="#">
-                        <img src="/images/banner/1_4.jpg" alt="Li's Static Banner">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Banner Area End Here -->
-            <!-- Begin Single Banner Area -->
-            <div class="col-lg-4 col-md-4">
-                <div class="single-banner">
-                    <a href="#">
-                        <img src="/images/banner/1_5.jpg" alt="Li's Static Banner">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Banner Area End Here -->
-        </div>
-    </div>
-</div>
-<!-- Li's Static Banner Area End Here -->
+
 <!-- Begin Li's Special Product Area -->
-<section class="product-area li-laptop-product Special-product pt-60 pb-45">
-    <div class="container">
+<div class="box p-2">
+    <div class="product-area li-laptop-product Special-product pt-10 pb-45">
         <div class="row">
             <!-- Begin Li's Section Area -->
             <div class="col-lg-12">
-                <div class="li-section-title">
+                <div class="box-title">
                     <h2>
                         <span>Sản phẩm nổi bật</span>
                     </h2>
@@ -147,60 +97,9 @@
                 <div class="row">
                     <div class="special-product-active owl-carousel">
                         @if(isset($productHot))
-                        @foreach($productHot as $hot)
+                        @foreach($productHot as $product)
                         <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap">
-                                <div class="product-image">
-                                    <a href="{{route('get.detail.product',[$hot->pro_slug,$hot->id])}}">
-                                        <img src="{{isset($hot->pro_avatar) ? pare_url_file($hot->pro_avatar): asset('images/no-image.png')}}" alt="">
-                                    </a>
-                                    <span class="sticker">Hot</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="{{isset($hot->category->c_name)? route('get.list.product',[$hot->category->c_slug,$hot->category->id]) : route('home')}}">{{isset($hot->category->c_name)? $hot->category->c_name : '[N/A]'}}</a>
-                                            </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <h4><a class="product_name" href="{{route('get.detail.product',[$hot->pro_slug,$hot->id])}}">{{$hot->pro_name}}</a></h4>
-                                        <div class="price-box">
-                                            @if($hot->pro_price_discount!=0)
-                                            <span class="new-price new-price-2"> {{number_format($hot->pro_price_discount)}} đ</span>
-                                            <span class="old-price">{{number_format($hot->pro_price)}} đ</span>
-                                            <span class="discount-percentage">-7%</span>
-                                            @else
-                                            @if($hot->pro_price!=0)
-                                            <span class="new-price new-price-2">{{number_format($hot->pro_price)}} đ</span>
-                                            @else
-                                            <span class="new-price new-price-2">Liên hệ</span>
-                                            @endif
-                                            @endif
-                                        </div>
-                                        <div class="countersection">
-                                            <div class="li-countdown"></div>
-                                        </div>
-                                    </div>
-                                    <div class="add-actions">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart active"><a href="#">Thêm vào giỏ</a></li>
-                                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-product-wrap end -->
+                            @include('components.productbox')
                         </div>
                         @endforeach
                         @endif
@@ -210,19 +109,18 @@
             <!-- Li's Section Area End Here -->
         </div>
     </div>
-</section>
+</div>
+
 <!-- Li's Special Product Area End Here -->
 <!-- Begin Product -->
 @if(isset($categories))
 @foreach($categories as $category)
-
-
-<section class="product-area pb-45">
-    <div class="container">
+<div class="box p-2">
+    <div class="product-area pb-45 pt-10">
         <div class="row">
             <!-- Begin Li's Section Area -->
             <div class="col-lg-12">
-                <div class="li-section-title">
+                <div class="box-title">
                     <h2>
                         <span>{{$category->c_name}}</span>
                     </h2>
@@ -230,86 +128,10 @@
                         <li><a href="{{route('get.list.product',[$category->c_slug,$category->id])}}">Xem tất cả</a></li>
                     </ul>
                 </div>
-                <div class="li-banner-2 pt-15">
-                    <div class="row">
-                        <!-- Begin Single Banner Area -->
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-banner">
-                                @if(isset($category->c_home_banner1))
-                                <a href="#">
-                                    <img src="{{pare_url_file($category->c_home_banner1)}}" alt="{{$category->c_name}}">
-                                </a>
-                                @endif
-                            </div>
-                        </div>
-                        <!-- Single Banner Area End Here -->
-                        <!-- Begin Single Banner Area -->
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-banner pt-xs-30">
-                                @if(isset($category->c_home_banner2))
-                                <a href="#">
-                                    <img src="{{pare_url_file($category->c_home_banner2)}}" alt="{{$category->c_name}}">
-                                </a>
-                                @endif
-                            </div>
-                        </div>
-                        <!-- Single Banner Area End Here -->
-                    </div>
-                </div>
                 <div class="row">
                     <div class="product-active owl-carousel">
                         @foreach($category->getProduct($category->id) as $product)
-                        <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap">
-                                <div class="product-image">
-                                    <a href="{{route('get.detail.product',[$product->pro_slug,$product->id])}}">
-                                        <img src="{{isset($product->pro_avatar) ? pare_url_file($product->pro_avatar): asset('images/no-image.png')}}" alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">Mới</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="{{isset($product->category->c_name)? route('get.list.product',[$product->category->c_slug,$product->category->id]) : route('home')}}">{{isset($product->category->c_name)? $product->category->c_name : '[N/A]'}}</a>
-                                            </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <h4><a class="product_name" href="{{route('get.detail.product',[$product->pro_slug,$product->id])}}">{{$product->pro_name}}</a></h4>
-                                        <div class="price-box">
-                                            @if($product->pro_price_discount!=0)
-                                            <span class="new-price new-price-2"> {{number_format($product->pro_price_discount)}} đ</span>
-                                            <span class="old-price">{{number_format($product->pro_price)}} đ</span>
-                                            <span class="discount-percentage">-7%</span>
-                                            @else
-                                            @if($product->pro_price!=0)
-                                            <span class="new-price new-price-2">{{number_format($product->pro_price)}} đ</span>
-                                            @else
-                                            <span class="new-price new-price-2">Liên hệ</span>
-                                            @endif
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="add-actions">
-                                        <ul class="add-actions-link">
-                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-product-wrap end -->
-                        </div>
+                        @include('components.productbox')
                         @endforeach
                     </div>
                 </div>
@@ -317,13 +139,14 @@
             <!-- Li's Section Area End Here -->
         </div>
     </div>
-</section>
+</div>
 @endforeach
 @endif
 <!--End Here -->
 <!-- Begin Li's Static Home Area -->
-<div class="li-static-home">
-    <div class="container">
+<div class="box p-2">
+    <div class="li-static-home">
+
         <div class="row">
             <div class="col-lg-12">
                 <!-- Begin Li's Static Home Image Area -->
@@ -349,8 +172,9 @@
 </div>
 <!-- Li's Static Home Area End Here -->
 <!-- Begin Li's Trending Product | Home V2 Area -->
-<section class="product-area li-trending-product li-trending-product-2 pt-60 pb-45">
-    <div class="container">
+<div class="box p-2">
+
+    <div class="product-area li-trending-product li-trending-product-2 pt-60 pb-45">
         <div class="row">
             <!-- Begin Li's Tab Menu Area -->
             <div class="col-lg-12">
@@ -370,7 +194,6 @@
                         <div class="row">
                             <div class="product-active owl-carousel">
                                 <div class="col-lg-12">
-                                    <!-- single-product-wrap start -->
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="{{route('get.detail.product',[$product->pro_slug,$product->id])}}">
@@ -1146,5 +969,5 @@
             <!-- Tab Menu Area End Here -->
         </div>
     </div>
-</section>
+</div>
 @stop

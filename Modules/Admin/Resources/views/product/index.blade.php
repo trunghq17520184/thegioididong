@@ -18,7 +18,7 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Quản lý danh sách</h3>
-                <a href="" class="btn btn-info">Thêm mới</a>
+                <a href="{{route('admin.get.create.product')}}" class="btn btn-info">Thêm mới</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -50,7 +50,7 @@
                             <td style="text-align: center; width: 100px">
                                 <img src="{{isset($product->pro_avatar)?pare_url_file($product->pro_avatar):asset('images/no-image.png')}}" alt="" style="width: 80px; height: 80px;">
                             </td>
-                            <td>{{$product->pro_name}}
+                            <td><a href="{{route('admin.get.action.product',['edit',$product->id])}}">{{$product->pro_name}}</a>
                                 <ul style="list-style-type: none;">
                                     <li>
                                         <span>Giá sản phẩm: {{number_format($product->pro_price)}} đ</span>

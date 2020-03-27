@@ -14,7 +14,7 @@
     <!-- Material Design Iconic Font-V2.2.0 -->
     <link rel="stylesheet" href="{{ asset('css/material-design-iconic-font.min.css')}}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets')}}/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Font Awesome Stars-->
     <link rel="stylesheet" href="{{ asset('css/fontawesome-stars.css')}}">
     <!-- Meanmenu CSS -->
@@ -34,7 +34,7 @@
     <!-- Magnific Popup CSS -->
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
     <!-- Bootstrap V4.1.3 Fremwork CSS -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Helper CSS -->
     <link rel="stylesheet" href="{{ asset('css/helper.css')}}">
     <!-- Main Style CSS -->
@@ -52,7 +52,9 @@
         @include('components.header')
         <!-- Header Area End Here -->
         <!-- Begin Slider With Category Menu Area -->
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
         <!-- Begin Footer Area -->
         @include('components.footer')
         <!-- Footer Area End Here -->

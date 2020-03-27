@@ -29,7 +29,7 @@ class HomeController extends FrontendController
         $productHot = Product::where([
             'pro_hot' => Product::HOT_ON,
             'pro_active' => Product::STATUS_PUBLIC,
-        ])->limit(4)->get();
+        ])->limit(10)->get();
         $sliders = Slider::all();
         $viewdata = [
             'productHot' => $productHot,

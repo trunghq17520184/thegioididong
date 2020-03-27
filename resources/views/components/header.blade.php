@@ -7,7 +7,7 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="header-top-left">
                         <ul class="phone-wrap">
-                            <li><span>Liên hệ:</span><a href="#">(+84) 904.777.528</a></li>
+                            <li><span>Telephone Enquiry:</span><a href="#">(+123) 123 321 345</a></li>
                         </ul>
                     </div>
                 </div>
@@ -16,9 +16,14 @@
                 <div class="col-lg-9 col-md-8">
                     <div class="header-top-right">
                         <ul class="ht-menu">
-                            <li><a href="login-register.html">Tài khoản</a></li>
-                            <li><a href="checkout.html">Thanh toán</a></li>
-                            <li><a href="login-register.html">Đăng nhập</a></li>
+                            <!-- Begin Setting Area -->
+                            <li>
+                                <a href=""><span>Tài khoản</span></a>
+                            </li>
+                            <li>
+                                <a href="{{route('auth.get.registerform')}}"><span>Đăng nhập</span></a>
+                            </li>
+                            <!-- Language Area End Here -->
                         </ul>
                     </div>
                 </div>
@@ -34,8 +39,8 @@
                 <!-- Begin Header Logo Area -->
                 <div class="col-lg-3">
                     <div class="logo pb-sm-30 pb-xs-30">
-                        <a href="{{route('home')}}">
-                            <img src="/images/menu/logo/logo.png" style="height: 60px;" alt="">
+                        <a href="index.html">
+                            <img src="images/menu/logo/1.jpg" alt="">
                         </a>
                     </div>
                 </div>
@@ -44,15 +49,7 @@
                 <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                     <!-- Begin Header Middle Searchbox Area -->
                     <form action="#" class="hm-searchbox">
-                        <select class="nice-select select-search-category">
-                            <option value="0">All</option>
-                            @if(isset($categories))
-                            @foreach($categories as $category)
-                            <option value="{{$category->id}}">{{$category->c_name}}</option>
-                            @endforeach
-                            @endif
-                        </select>
-                        <input type="text" placeholder="Nhập từ khóa ...">
+                        <input type="text" placeholder="Bạn muốn tìm ...">
                         <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                     <!-- Header Middle Searchbox Area End Here -->
@@ -71,7 +68,7 @@
                             <li class="hm-minicart">
                                 <div class="hm-minicart-trigger">
                                     <span class="item-icon"></span>
-                                    <span class="item-text">160.000.000 đ
+                                    <span class="item-text">£160
                                         <span class="cart-item-count">2</span>
                                     </span>
                                 </div>
@@ -80,7 +77,7 @@
                                     <ul class="minicart-product-list">
                                         <li>
                                             <a href="single-product.html" class="minicart-product-image">
-                                                <img src="/images/product/small-size/3.jpg" alt="cart products">
+                                                <img src="images/product/small-size/3.jpg" alt="cart products">
                                             </a>
                                             <div class="minicart-product-details">
                                                 <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -92,7 +89,7 @@
                                         </li>
                                         <li>
                                             <a href="single-product.html" class="minicart-product-image">
-                                                <img src="/images/product/small-size/4.jpg" alt="cart products">
+                                                <img src="images/product/small-size/4.jpg" alt="cart products">
                                             </a>
                                             <div class="minicart-product-details">
                                                 <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -131,10 +128,17 @@
                 <div class="col-lg-12">
                     <!-- Begin Header Bottom Menu Area -->
                     <div class="hb-menu hb-menu-2 d-xl-block">
-                        <nav>
+                        <nav style="display: block;">
                             <ul>
-                                <li><a href="{{route('home')}}">Trang chủ</a></li>
-                                <!-- <li class="megamenu-holder"><a href="shop-left-sidebar.html">Shop</a>
+                                <li class="dropdown-holder"><a href="index.html">Home</a>
+                                    <ul class="hb-dropdown">
+                                        <li><a href="index.html">Home One</a></li>
+                                        <li class="active"><a href="index-2.html">Home Two</a></li>
+                                        <li><a href="index-3.html">Home Three</a></li>
+                                        <li><a href="index-4.html">Home Four</a></li>
+                                    </ul>
+                                </li>
+                                <li class="megamenu-holder"><a href="shop-left-sidebar.html">Shop</a>
                                     <ul class="megamenu hb-megamenu">
                                         <li><a href="shop-left-sidebar.html">Shop Page Layout</a>
                                             <ul>
@@ -242,10 +246,10 @@
                                     </ul>
                                 </li>
                                 <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="contact.html">Contact</a></li> -->
+                                <li><a href="contact.html">Contact</a></li>
                                 <!-- Begin Header Bottom Menu Information Area -->
                                 <li class="hb-info f-right p-0 d-sm-none d-lg-block">
-                                    <span>CÔNG TY TNHH TM DV THIẾT BỊ ĐIỆN MẠNH TÙNG</span>
+                                    <span>6688 London, Greater London BAS 23JK, UK</span>
                                 </li>
                                 <!-- Header Bottom Menu Information Area End Here -->
                             </ul>

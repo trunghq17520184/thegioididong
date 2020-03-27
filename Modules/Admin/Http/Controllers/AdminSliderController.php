@@ -16,7 +16,11 @@ class AdminSliderController extends Controller
      */
     public function index()
     {
-        return view('admin::slider.index');
+        $sliders = Slider::all();
+        $viewdata = [
+            'sliders' => $sliders,
+        ];
+        return view('admin::slider.index', $viewdata);
     }
 
     /**
@@ -39,6 +43,24 @@ class AdminSliderController extends Controller
         return redirect()->back();
     }
 
+    public function action(Request $request, $action, $id)
+    {
+        $slider = Slider::find($id);
+        switch ($action) {
+            case 'delete':
+                $slider->delete();
+                break;
+            case 'edit':
+                $sliders = Slider::all();
+                $viewdata = [
+                    'slider' => $slider,
+                    'sliders' => $sliders,
+
+                ];
+                return view('admin::slider.index', $viewdata);
+        }
+        return redirect()->back();
+    }
     public function insertOrUpdate(RequestSlider $requestSlider, $id = '')
     {
         $slider = new Slider();
@@ -63,8 +85,9 @@ class AdminSliderController extends Controller
      * @param int $id
      * @return Response
      */
-    public function destroy($id)
+    public function update(RequestSlider $request, $id)
     {
-        //
+        $this->insertOrUpdate($request, $id);
+        return redirect()->back();
     }
 }

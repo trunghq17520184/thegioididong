@@ -2,8 +2,8 @@
 @section('title',$category->c_name)
 @section('content')
 <!-- Begin Li's Breadcrumb Area -->
-<div class="breadcrumb-area">
-    <div class="container">
+<div class="box">
+    <div class="breadcrumb-area pl-10">
         <div class="breadcrumb-content">
             <ul>
                 <li><a href="{{route('home')}}">Trang chủ</a></li>
@@ -15,8 +15,8 @@
 </div>
 <!-- Li's Breadcrumb Area End Here -->
 <!-- Begin Li's Content Wraper Area -->
-<div class="content-wraper pt-60 pb-60">
-    <div class="container">
+<div class="box px-3 py-5">
+    <div class="content-wraper ">
         <div class="row">
             <div class="col-lg-9 order-2 order-lg-1">
                 <!-- Begin Li's Banner Area -->
@@ -136,53 +136,8 @@
                                     @foreach($products as $product)
                                     <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                         <!-- single-product-wrap start -->
-                                        <div class="single-product-wrap">
-                                            <div class="product-image">
-                                                <a href="{{route('get.detail.product',[$product->pro_slug,$product->id])}}">
-                                                    <img src="{{isset($product->pro_avatar) ? pare_url_file($product->pro_avatar): asset('images/no-image.png')}}" alt="">
-                                                </a>
-                                                <span class="sticker">Mới</span>
-                                            </div>
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="{{isset($product->category->c_name)? route('get.list.product',[$product->category->c_slug,$product->category->id]) : route('home')}}">{{isset($product->category->c_name)? $product->category->c_name : '[N/A]'}}</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li><i class="fa fa-star-o"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name" href="{{route('get.detail.product',[$product->pro_slug,$product->id])}}">{{$product->pro_name}}</a></h4>
-                                                    <div class="price-box">
-                                                        @if($product->pro_price_discount!=0)
-                                                        <span class="new-price new-price-2"> {{number_format($product->pro_price_discount)}} đ</span>
-                                                        <span class="old-price">{{number_format($product->pro_price)}} đ</span>
-                                                        <span class="discount-percentage">-7%</span>
-                                                        @else
-                                                        @if($product->pro_price!=0)
-                                                        <span class="new-price new-price-2">{{number_format($product->pro_price)}} đ</span>
-                                                        @else
-                                                        <span class="new-price new-price-2">Liên hệ</span>
-                                                        @endif
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="add-actions">
-                                                    <ul class="add-actions-link">
-                                                        <li class="add-cart active"><a href="shopping-cart.html">Thêm vào giỏ</a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @include('components.productbox')
+
                                         <!-- single-product-wrap end -->
                                     </div>
                                     @endforeach

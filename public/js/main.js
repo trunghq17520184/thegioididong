@@ -94,13 +94,13 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
         loop: true,
         nav: true,
         dots: false,
-        autoplay: false,
-        autoplayTimeout: 5000,
+        autoplay: true,
+        autoplayTimeout: 3000,
         navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-        item: 5,
+        item: 10,
         responsive: {
             0: {
-                items: 1
+                items: 2
             },
             480: {
                 items: 2
@@ -123,10 +123,10 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
         loop: true,
         nav: false,
         dots: false,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: 5000,
         navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-left"></i>'],
-        item: 4,
+        item: 10,
         responsive: {
             0: {
                 items: 1

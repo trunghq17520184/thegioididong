@@ -13,6 +13,6 @@ class Category extends Model
         return Product::where([
             'pro_category_id' => $id,
             'pro_active' => Product::STATUS_PUBLIC,
-        ])->limit(5)->get();
+        ])->limit(10)->get();
     }
 }

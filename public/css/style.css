@@ -96,6 +96,10 @@ a {
     transition: 0.3s ease-in-out;
 }
 
+.logo {
+    float: left;
+}
+
 a:hover {
     color: #21ABF3;
 }
@@ -121,7 +125,7 @@ a,
 button,
 input {
     outline: medium none;
-    color: #fff;
+    color: #000;
 }
 
 button:focus {
@@ -557,88 +561,7 @@ textarea:focus {
 /*----------------------------------------*/
 
 
-/*Home One | Slider Background Image*/
-
-.bg-1,
-.bg-2,
-.bg-3 {
-    background-image: url(images/slider/1.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    min-height: 475px;
-    width: 100%;
-}
-
-.bg-2 {
-    background-image: url(images/slider/2.jpg);
-}
-
-.bg-3 {
-    background-image: url(images/slider/3.jpg);
-}
-
-
-/*Home Two | Slider Background Image*/
-
-.bg-4 {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    min-height: 475px;
-    width: 100%;
-}
-
-
 /*Home Three | Slider Background Image*/
-
-.bg-7,
-.bg-8,
-.bg-9 {
-    background-image: url(images/slider/7.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    min-height: 425px;
-    width: 100%;
-}
-
-.bg-8 {
-    background-image: url(images/slider/8.jpg);
-}
-
-.bg-9 {
-    background-image: url(images/slider/9.jpg);
-}
-
-
-/*Home Four | Slider Background Image*/
-
-.bg-10,
-.bg-11,
-.bg-12 {
-    background-image: url(images/slider/10.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    min-height: 770px;
-    width: 100%;
-}
-
-.bg-11 {
-    background-image: url(images/slider/11.jpg);
-}
-
-.bg-12 {
-    background-image: url(images/slider/12.jpg);
-}
-
-
-/*----------------------------------------*/
-
-
-/*  li's Background Variation Set 
-/*----------------------------------------*/
 
 .white-bg {
     background: #fff;
@@ -1014,7 +937,6 @@ textarea:focus {
 
 .shop-product-area .single-product-wrap::before {
     left: 0;
-    ;
     right: 0;
 }
 
@@ -1390,13 +1312,13 @@ textarea:focus {
     cursor: pointer;
 }
 
-.product-details-view-content .product-info h2 {
+.product-details-view-content .product-info h1 {
     font-size: 18px;
     letter-spacing: -.025em;
     line-height: 24px;
     color: #0363cd;
-    text-transform: capitalize;
     font-weight: 500;
+    font-size: 25px;
     margin: 0 0 15px 0;
 }
 
@@ -1411,7 +1333,7 @@ textarea:focus {
 }
 
 .product-details-view-content .product-info .price-box .new-price {
-    font-weight: 500;
+    font-weight: bold;
     font-size: 24px;
     line-height: 27px;
     color: #e80f0f;
@@ -1428,6 +1350,20 @@ textarea:focus {
 
 .product-stock .product-stock-size {
     margin-right: 30px;
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.stock-out {
+    background-color: red;
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    max-inline-size: fit-content;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .product-stock .product-stock-size label {
@@ -1499,17 +1435,27 @@ textarea:focus {
 }
 
 .cart-quantity .add-to-cart {
-    border: none;
-    font-size: 14px;
-    color: #242424;
-    position: relative;
-    background: #21ABF3;
+    margin: auto;
     cursor: pointer;
-    font-weight: 500;
-    text-transform: capitalize;
-    padding: 13px 70px;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    padding: 9px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: #fd6e1d;
+    display: inline-grid;
+}
+
+.add-to-cart>span {
+    text-transform: none;
+    font-weight: 200;
+    font-size: 13px;
 }
 
 .cart-quantity .add-to-cart:hover {
@@ -1744,8 +1690,9 @@ textarea:focus {
     padding-right: 0;
 }
 
-.ht-menu>li span {
-    font-size: 12px;
+.ht-menu>li>a {
+    font-size: 14px;
+    color: #fff;
 }
 
 
@@ -1869,6 +1816,11 @@ textarea:focus {
     align-self: center;
 }
 
+.box {
+    background-color: white;
+    margin-bottom: 30px;
+}
+
 .hm-searchbox .nice-select.select-search-category {
     width: auto;
     line-height: 43px;
@@ -1969,6 +1921,7 @@ textarea:focus {
     height: 45px;
     cursor: pointer;
     display: block;
+    float: left;
     position: relative;
     padding: 0 15px 0 55px;
 }
@@ -2856,18 +2809,14 @@ textarea:focus {
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
-    text-transform: capitalize;
-}
-
-.product_desc .product_desc_info .product_name:hover {
-    text-decoration: underline;
+    text-transform: none;
 }
 
 .product_desc .manufacturer a {
     color: #a4a4a4;
     font-size: 13px;
     margin-top: 9px;
-    text-transform: capitalize;
+    text-transform: uppercase;
     transition: all 0.3s ease-in-out;
 }
 
@@ -2880,7 +2829,7 @@ textarea:focus {
 .featured-price-box .new-price-2 {
     color: #2f333a;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: bold;
     padding-right: 10px;
 }
 
@@ -2889,23 +2838,26 @@ textarea:focus {
     color: #e80f0f !important;
 }
 
-.product_desc .product_desc_info .price-box .discount-percentage,
-.featured-price-box .discount-percentage {
-    float: right;
+.product_desc .product_desc_info .price-box,
+.featured-price-box {
     color: #e80f0f;
     padding-left: 0px;
     font-size: small;
 }
 
-.discount-percentage {
-    padding-left: 20px;
-    font-size: large;
-    color: #e80f0f;
+.per-discount {
+    color: white;
+    font-size: 13px;
+    max-inline-size: fit-content;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #e80f0f;
 }
 
 .product_desc .product_desc_info .old-price {
     color: #666;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     padding-left: 0px;
     text-decoration: line-through;
@@ -3263,23 +3215,34 @@ textarea:focus {
 /*  2.6 Li's Laptop Features
 /*----------------------------------------*/
 
-.li-section-title {
+.box-title {
     border-bottom: 1px solid #e1e1e1;
     width: 100%;
     display: inline-block;
     position: relative;
 }
 
-.li-section-title>h2 {
+.box-title>h2 {
     float: left;
-    font-size: 20px;
+    text-transform: uppercase;
+    font-size: 17px;
     color: #242424;
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: -.025em;
     padding: 0;
     line-height: 1;
     padding-bottom: 13px;
     z-index: 0;
+}
+
+.product_name>h3 {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.product_name>h3:hover {
+    color: blue;
 }
 
 
@@ -3303,7 +3266,7 @@ textarea:focus {
 }
 
 .li-sub-category-list>li>a::after,
-.li-section-title>h2>span::before {
+.box-title>h2>span::before {
     content: "";
     position: absolute;
     bottom: -23px;
@@ -3314,12 +3277,12 @@ textarea:focus {
     opacity: 0;
 }
 
-.li-section-title>h2>span {
+.box-title>h2>span {
     display: inline-block;
     position: relative;
 }
 
-.li-section-title>h2>span::before {
+.box-title>h2>span::before {
     opacity: 1;
     left: 0;
     right: 0;
@@ -6329,7 +6292,6 @@ span.required {
 }
 
 .block-reassurance {
-    float: left;
     width: 100%;
 }
 

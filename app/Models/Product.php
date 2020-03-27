@@ -45,11 +45,11 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'pro_category_id');
     }
 
-    public function getSameProduct($id)
+    public function getSameProduct()
     {
         return Product::where([
-            'pro_category_id' => $id,
+            'pro_category_id' => $this->pro_category_id,
             'pro_active' => Product::STATUS_PUBLIC,
-        ])->get();
+        ])->limit(10)->get();
     }
 }
