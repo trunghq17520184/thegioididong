@@ -386,6 +386,16 @@
               <li><a href="{{route('admin.get.create.product')}}"><i class="fa fa-plus-square"></i> Thêm sản phẩm</a></li>
             </ul>
           </li>
+          <li>
+            <a href="{{route('admin.get.user')}}">
+              <i class="fa fa-user"></i>
+              <span>Users</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('admin.get.transaction')}}">
+              <i class="fa fa-shopping-cart"></i>
+              <span>Đơn hàng</span></a></li>
         </ul>
       </section>
       <!-- /.sidebar -->

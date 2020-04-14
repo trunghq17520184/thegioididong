@@ -65,7 +65,8 @@ class AdminProductController extends Controller
         $product->pro_active = $requestProduct->pro_active;
         $product->pro_stock = $requestProduct->pro_stock ? $requestProduct->pro_stock : 0;
         $product->pro_price = $requestProduct->pro_price ? $requestProduct->pro_price : 0;
-        $product->pro_price_discount = $requestProduct->pro_price_discount ? $requestProduct->pro_price_discount : 0;
+        $product->pro_price_discount = $requestProduct->pro_price_discount != 0 ? $requestProduct->pro_price_discount : $requestProduct->pro_price;
+        $product->pro_discount_percent = $requestProduct->pro_price_discount != 0 ? ROUND(100 - $requestProduct->pro_price_discount * 100 / $requestProduct->pro_price) : 0;
         $product->pro_hot = $requestProduct->pro_hot == 'on' ? 1 : 0;
         $product->pro_keyword_seo = $requestProduct->pro_keyword_seo;
         $product->pro_category_id = $requestProduct->pro_category_id;

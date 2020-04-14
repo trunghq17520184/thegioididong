@@ -27,7 +27,7 @@
                         <h3>{{$product->pro_name}}</h3>
                     </a></h4>
                 <div class="price-box">
-                    @if($product->pro_price_discount!=0)
+                    @if($product->pro_discount_percent!=0)
                     <div class="per-discount">
                         <span class="discount-percentage"><i class="fa fa-bolt" style="color: white"></i> Giảm giá {{ROUND(100 - $product->pro_price_discount*100/$product->pro_price)}} %</span>
                     </div>

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestLogin;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -35,10 +37,26 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+      // $this->middleware('guest')->except('logout');
     }
     public function getLoginForm()
     {
         return view('auth.login');
+    }
+
+    public function postLoginForm(RequestLogin $requestLogin)
+    {
+        $credentials = $requestLogin->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('/');
+        }
+        return redirect()->back();
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->intended('/');
     }
 }

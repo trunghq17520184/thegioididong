@@ -177,7 +177,7 @@
     <!-- Popper js -->
     <script src="{{ asset('js/vendor/popper.min.js')}}"></script>
     <!-- Bootstrap V4.1.3 Fremwork js -->
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets')}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Ajax Mail js -->
     <script src="{{ asset('js/ajax-mail.js')}}"></script>
     <!-- Meanmenu js -->

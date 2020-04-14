@@ -48,4 +48,13 @@ Route::prefix('admin')->group(function () {
         Route::post('/', 'AdminImageController@store');
         Route::get('/{action}/{id}', 'AdminImageController@action')->name('admin.get.action.image');
     });
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('/', 'AdminUserController@index')->name('admin.get.user');
+        Route::post('/', 'AdminUserController@store');
+        Route::get('/{action}/{id}', 'AdminUserController@action')->name('admin.get.action.user');
+    });
+    Route::group(['prefix' => 'transaction'], function () {
+        Route::get('/', 'AdminTransactionController@index')->name('admin.get.transaction');
+        Route::get('/{action}/{id}', 'AdminTransactionController@action')->name('admin.get.action.transaction');
+    });
 });

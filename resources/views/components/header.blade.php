@@ -17,12 +17,22 @@
                     <div class="header-top-right">
                         <ul class="ht-menu">
                             <!-- Begin Setting Area -->
+                            @if(Auth::check())
                             <li>
-                                <a href=""><span>Tài khoản</span></a>
+                                <a href=""><span>{{Auth::user()->name}}</span></a>
                             </li>
                             <li>
-                                <a href="{{route('auth.get.registerform')}}"><span>Đăng nhập</span></a>
+                                <a href="{{route('auth.get.logout')}}"><span>Đăng xuất</span></a>
                             </li>
+                            @else
+                            <li>
+                                <a href="{{route('auth.get.loginform')}}"><span>Đăng nhập</span></a>
+                            </li>
+                            <li>
+                                <a href="{{route('auth.get.registerform')}}"><span>Đăng kí</span></a>
+                            </li>
+                            @endif
+
                             <!-- Language Area End Here -->
                         </ul>
                     </div>
@@ -39,7 +49,7 @@
                 <!-- Begin Header Logo Area -->
                 <div class="col-lg-3">
                     <div class="logo pb-sm-30 pb-xs-30">
-                        <a href="index.html">
+                        <a href="{{route('home')}}">
                             <img src="images/menu/logo/1.jpg" alt="">
                         </a>
                     </div>
@@ -68,8 +78,8 @@
                             <li class="hm-minicart">
                                 <div class="hm-minicart-trigger">
                                     <span class="item-icon"></span>
-                                    <span class="item-text">£160
-                                        <span class="cart-item-count">2</span>
+                                    <span class="item-text">{{\Cart::subtotal(0)}} VNĐ
+                                        <span class="cart-item-count">{{\Cart::count()}}</span>
                                     </span>
                                 </div>
                                 <span></span>
@@ -102,10 +112,10 @@
                                     </ul>
                                     <p class="minicart-total">SUBTOTAL: <span>£160</span></p>
                                     <div class="minicart-button">
-                                        <a href="checkout.html" class="li-button li-button-dark li-button-fullwidth li-button-sm">
+                                        <a href="{{route('get.shopping.index')}}" class="li-button li-button-dark li-button-fullwidth li-button-sm">
                                             <span>View Full Cart</span>
                                         </a>
-                                        <a href="checkout.html" class="li-button li-button-fullwidth li-button-sm">
+                                        <a href="{{route('get.shopping.index')}}" class="li-button li-button-fullwidth li-button-sm">
                                             <span>Checkout</span>
                                         </a>
                                     </div>
@@ -130,9 +140,9 @@
                     <div class="hb-menu hb-menu-2 d-xl-block">
                         <nav style="display: block;">
                             <ul>
-                                <li class="dropdown-holder"><a href="index.html">Home</a>
+                                <li class="dropdown-holder"><a href="{{route('home')}}">Home</a>
                                     <ul class="hb-dropdown">
-                                        <li><a href="index.html">Home One</a></li>
+                                        <li><a href="{{route('home')}}">Home One</a></li>
                                         <li class="active"><a href="index-2.html">Home Two</a></li>
                                         <li><a href="index-3.html">Home Three</a></li>
                                         <li><a href="index-4.html">Home Four</a></li>
@@ -204,7 +214,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="megamenu-static-holder"><a href="index.html">Pages</a>
+                                <li class="megamenu-static-holder"><a href="{{route('home')}}">Pages</a>
                                     <ul class="megamenu hb-megamenu">
                                         <li><a href="blog-left-sidebar.html">Blog Layouts</a>
                                             <ul>
@@ -226,7 +236,7 @@
                                                 <li><a href="blog-gallery-format.html">Blog Gallery Format</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="index.html">Other Pages</a>
+                                        <li><a href="{{route('home')}}">Other Pages</a>
                                             <ul>
                                                 <li><a href="login-register.html">My Account</a></li>
                                                 <li><a href="checkout.html">Checkout</a></li>
@@ -235,7 +245,7 @@
                                                 <li><a href="shopping-cart.html">Shopping Cart</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="index.html">Other Pages 2</a>
+                                        <li><a href="{{route('home')}}">Other Pages 2</a>
                                             <ul>
                                                 <li><a href="contact.html">Contact</a></li>
                                                 <li><a href="about-us.html">About Us</a></li>

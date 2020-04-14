@@ -1819,6 +1819,7 @@ textarea:focus {
 .box {
     background-color: white;
     margin-bottom: 30px;
+    padding: 10px;
 }
 
 .hm-searchbox .nice-select.select-search-category {
@@ -5029,7 +5030,7 @@ thead {
     font-size: 13px;
     border-radius: 0;
     height: 42px;
-    width: 120px;
+    width: 320px;
 }
 
 .coupon-all input.button {
@@ -5107,6 +5108,13 @@ thead {
 .cart-page-total>a:hover {
     background: #21ABF3;
     border-color: #21ABF3;
+}
+
+.cart-page-total label {
+    font-size: 15px;
+    color: #252525;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
